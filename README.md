@@ -6,7 +6,7 @@ the client is a native install, because putting a machine behind a proxy means
 owning its routing table and a container is the wrong shape for that.
 
 ```
-curl -fsSLO https://raw.githubusercontent.com/sqzer-x/transtation/v1.0.18/install.sh
+curl -fsSLO https://raw.githubusercontent.com/debuman/transtation/v1.0.18/install.sh
 sha256sum install.sh      # compare against the hash in the v1.0.18 release notes
 less install.sh           # please actually read it
 sudo sh install.sh
@@ -49,7 +49,7 @@ how you feel about a container runtime on your VPS.
 ### In a container (default)
 
 ```
-curl -fsSLO https://raw.githubusercontent.com/sqzer-x/transtation/v1.0.18/install.sh
+curl -fsSLO https://raw.githubusercontent.com/debuman/transtation/v1.0.18/install.sh
 sha256sum install.sh      # compare against the hash in the v1.0.18 release notes
 less install.sh           # please actually read it
 sudo sh install.sh
@@ -567,7 +567,7 @@ host's own proxy stopped, so nothing was measured through a second proxy:
 ## Building and testing yourself
 
 ```
-git clone https://github.com/sqzer-x/transtation && cd transtation
+git clone https://github.com/debuman/transtation && cd transtation
 sh test.sh
 ```
 

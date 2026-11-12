@@ -1,6 +1,6 @@
 #!/bin/sh
 # transtation -- self-provisioning VLESS + REALITY proxy server, optional Cloudflare WARP egress.
-# https://github.com/sqzer-x/transtation
+# https://github.com/debuman/transtation
 #
 # Everything in /data except config.json and runtime.env is IDENTITY: written
 # once, atomically, and never rewritten. Everything else is DERIVED and

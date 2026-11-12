@@ -16,7 +16,7 @@
 set -eu
 
 VERSION=${TT_VERSION:-v1.0.18}
-IMAGE_SERVER=${TT_IMAGE_SERVER:-ghcr.io/sqzer-x/transtation}
+IMAGE_SERVER=${TT_IMAGE_SERVER:-ghcr.io/debuman/transtation}
 # Filled in by the release workflow. A tag is mutable -- the same stolen-token
 # compromise we already concede for Xray's .dgst would let someone retag
 # v1.0.18, and the hash-verified installer you read would vouch for nothing.
@@ -39,7 +39,7 @@ PRIVLIB=/usr/local/lib/transtation
 
 DIR=${TT_DIR:-/opt/transtation}
 URI_DIR=/etc/transtation
-RAW=https://raw.githubusercontent.com/sqzer-x/transtation/$VERSION
+RAW=https://raw.githubusercontent.com/debuman/transtation/$VERSION
 
 say() { printf '%s\n' "$*"; }
 # Under `curl | sh` stdin is the script itself, so a bare `read` swallows the
@@ -197,7 +197,7 @@ install_server_native() {
 	refuse_other_server native
 	say ""
 	say "  transtation $VERSION -- native install, no container runtime"
-	say "  https://github.com/sqzer-x/transtation"
+	say "  https://github.com/debuman/transtation"
 	say ""
 	step host "$(os_id) / $(uname -m) / root"
 	[ -d /run/systemd/system ] || die "the native install is managed by systemd, which is not running here.
@@ -360,7 +360,7 @@ install_server() {
 	refuse_other_server container
 	say ""
 	say "  transtation $VERSION -- your own VLESS + REALITY proxy"
-	say "  https://github.com/sqzer-x/transtation"
+	say "  https://github.com/debuman/transtation"
 	say ""
 	step host "$(os_id) / $(uname -m) / root"
 	install_docker
@@ -793,7 +793,7 @@ main() {
 		client) install_client "$@" ;;
 		--uninstall | uninstall) uninstall ;;
 		-h | --help)
-			sed -n '2,10p' "$0" 2>/dev/null || say "see https://github.com/sqzer-x/transtation"
+			sed -n '2,10p' "$0" 2>/dev/null || say "see https://github.com/debuman/transtation"
 			;;
 		*) die "unknown command: $_cmd (expected: server, client, --uninstall)" ;;
 	esac
